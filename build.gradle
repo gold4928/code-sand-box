@@ -21,6 +21,21 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // mqtt
+    implementation 'org.fusesource.mqtt-client:mqtt-client:1.16'
+    implementation 'org.jolokia:jolokia-client-java:1.6.2'
+
+    // Apache HttpClient - Jolokia 인증 처리용 (pom: BOM 관리, httpcore 4.4.13)
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+    implementation 'org.apache.httpcomponents:httpcore:4.4.13'
+
+    // ActiveMQ (pom: activemq-core 5.7.0)
+    implementation 'org.apache.activemq:activemq-core:5.7.0'
+
+    // JSON (pom: org.json 20240303)  — Jolokia 응답 파싱
+    implementation 'org.json:json:20240303'
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
